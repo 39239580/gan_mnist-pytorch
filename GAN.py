@@ -28,6 +28,17 @@ class DiscriminationNet(nn.Module):
     def forward(self,x):
         x=self.dis(x)
         return  x
+    # 还有另一种写法
+    # def __init__(self):
+    #   super().__init__():
+    #   self.dis=nn.Sequential(
+    #   nn.Linear(784,256),
+    #   nn.LeakyReLU(0.2)),
+    #   nn.Linear(256,256),
+    #   nn.LeakyReLU(0.2),
+    #   nn.Linear(256,1),
+    #   nn.Sigmoid()
+    #   )
     
 class GeneratorNet(nn.Module):
     def __init__(self,input_size):
